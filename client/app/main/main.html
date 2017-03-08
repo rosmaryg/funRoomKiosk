@@ -1,0 +1,30 @@
+<div>
+  <h1 layout="row" layout-align="center center">Welcome to the Collaboration Space!</h1>
+  <md-grid-list
+    layout="row" layout-align="center none" style="margin: auto" flex="95"
+    md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="3"
+    md-row-height-gt-md="1:1" md-row-height="2:2"
+    md-gutter="12px" md-gutter-gt-sm="15px">
+    <md-grid-tile class="pink" ng-click="main.goTo('stats')"
+                  md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" flex>
+      <md-icon md-svg-icon="action:assessment" class="md-140"></md-icon>
+      <md-grid-tile-footer>
+        <h3>Stats</h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+    <md-grid-tile class="blue" ng-click="main.goTo('pastEvents')"
+                  md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" flex>
+      <md-icon md-svg-icon="image:camera_alt" class="md-140"></md-icon>
+      <md-grid-tile-footer>
+        <h3>Past Event Photos</h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+    <md-grid-tile class="green" ng-click="main.goTo('upcoming')"
+                  md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" flex>
+      <md-icon md-svg-icon="action:event" class="md-140"></md-icon>
+      <md-grid-tile-footer>
+        <h3>Upcoming Events</h3>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
+</div>

@@ -69,7 +69,6 @@ export function index(req, res) {
   var colors = ["pink", "green", "yellow", "blue", "purple", "red"];
   var color_index = 0;
   fs.readdir(filepath, function(err, items) {
-    console.log(items);
     var promise = new Promise(function(resolve, reject) {
       var folders = [];
       for (var key in items) {
@@ -97,13 +96,19 @@ export function show(req, res) {
   //   .then(handleEntityNotFound(res))
   //   .then(respondWithResult(res))
   //   .catch(handleError(res));
-  var filepath = path.join(__dirname, "../../../client/assets/photos/", req.params.id) ;
+  var init_path = "../../../client/assets/photos/" + req.params.id;
+  var init_client_path = "../../assets/photos/" + req.params.id;
+  if (req.params.id === "stats" || req.params.id === "upcoming") {
+    init_path = "../../../client/assets/" + req.params.id;
+    init_client_path = "../../assets/" + req.params.id;
+  }
+  var filepath = path.join(__dirname, init_path);
   fs.readdir(filepath, function(err, items) {
     var promise = new Promise(function(resolve, reject) {
       var pictures = [];
       for (var key in items) {
         var picture = {};
-        picture.src = "../../assets/photos/" + req.params.id + "/" + items[key];
+        picture.src = init_client_path + "/" + items[key];
         picture.alt = req.params.id;
         pictures.push(picture);
       }

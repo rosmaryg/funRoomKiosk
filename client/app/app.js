@@ -9,8 +9,7 @@ angular.module('funRoomApp', ['funRoomApp.constants', 'ngCookies', 'ngResource',
     });
 
     $locationProvider.html5Mode(true);
-
-
+    
     $mdIconProvider
       .iconSet('action', '../assets/iconsets/action-icons.svg', 24)
       .iconSet('alert', '../assets/iconsets/alert-icons.svg', 24)
@@ -33,8 +32,9 @@ angular.module('funRoomApp', ['funRoomApp.constants', 'ngCookies', 'ngResource',
 
     $mdThemingProvider.definePalette('Att-Blue', {'50':'#c6ebfd','100':'#7cd0fb','200':'#46bdf9','300':'#08a2ef','400':'#078ed2','500':'#067ab4','600':'#056696','700':'#045279','800':'#033e5b','900':'#022a3e','A100':'#c6ebfd','A200':'#7cd0fb','A400':'#078ed2','A700':'#045279', 'contrastDefaultColor': 'light'});
     $mdThemingProvider.definePalette('Att-Orange', {'50':'#ffffff','100':'#ffdabd','200':'#ffbb85','300':'#ff943d','400':'#ff831f','500':'#ff7200','600':'#e06400','700':'#c25700','800':'#a34900','900':'#853b00','A100':'#ffffff','A200':'#ffdabd','A400':'#ff831f','A700':'#c25700', 'contrastDefaultColor': 'light'});
+    $mdThemingProvider.definePalette('black', {'50':'#444444','100':'#444444','200':'#444444','300':'#444444','400':'#444444','500':'#444444','600':'#444444','700':'#444444','800':'#444444','900':'#444444','A100':'#000000','A200':'#000000','A400':'#000000','A700':'#000000', 'contrastDefaultColor': 'light'});
     $mdThemingProvider.theme('default')
-        .primaryPalette('Att-Blue')
+        .primaryPalette('black')
         .accentPalette('Att-Orange');
 
     $mdThemingProvider.theme('dark')

@@ -3,8 +3,10 @@
 (function(){
 
 class UpcomingComponent {
-  constructor() {
+  constructor($location, $anchorScroll) {
     this.message = 'Hello';
+    $location.hash("topOfPictures");
+    $anchorScroll();
   }
 }
 

@@ -3,9 +3,11 @@
 (function(){
 
 class ViewPhotosComponent {
-  constructor($routeParams) {
+  constructor($routeParams, $location, $anchorScroll) {
     this.message = 'Hello';
     this.event = $routeParams.event;
+    $location.hash("topOfPictures");
+    $anchorScroll();
   }
 }
 

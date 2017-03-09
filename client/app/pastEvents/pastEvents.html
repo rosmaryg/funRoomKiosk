@@ -1,11 +1,12 @@
 <div>
-  <h1 layout="row" layout-align="center center">Photos from Past Events</h1>
+  <h1 layout="row" layout-align="center center" style="color: lightgrey">Photos from Past Events</h1>
   <md-grid-list
     layout="row" layout-align="center none" style="margin: auto" flex="95"
     md-cols="3" md-row-height="2:1"
     md-gutter="12px" md-gutter-gt-sm="15px" flex>
     <md-grid-tile class="{{folder.color}}" ng-repeat="folder in pastEventsCtrl.folders" ng-click="pastEventsCtrl.goTo(folder.name)"
                   md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" flex>
+      <img src="{{folder.image}}" style="max-height: 100%; width:100%;">
       <md-grid-tile-footer>
         <h3>{{folder.name.split('_').join(' ')}}</h3>
       </md-grid-tile-footer>

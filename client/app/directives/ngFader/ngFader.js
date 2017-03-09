@@ -6,7 +6,13 @@
       function link(scope){
 
         //Set your interval time. 4000 = 4 seconds
-        scope.setTime = 2000;
+        scope.setTime = 1500;
+        if (scope.event === "stats") {
+          scope.setTime = 5000;
+        }
+        if (scope.event === "upcoming") {
+          scope.setTime = 3000;
+        }
         scope.images = [];
         //List your images here.
         photoService.getPhotos(scope.event)
@@ -44,7 +50,7 @@
         };
 
         scope.autoSlider = function (){
-          scope.selectedImage < scope.numberOfImages - 1 ? scope.selectedImage++ : scope.selectedImage = 0;
+          scope.selectedImage < scope.numberOfImages - 1 ? scope.selectedImage++ : window.history.back();
         };
 
         scope.stopSlider = function() {
@@ -82,7 +88,7 @@
         scope: {
           event: '@'
         },
-        template: '<div class="ng-fader">'+
+        template: '<div class="ng-fader" style="height: 100%; width: auto;">'+
         //images will render here
         '<ul>' +
         '<li ng-repeat="image in images" ng-click="toggleStartStop()" ng-swipe-right="sliderBack()" ng-swipe-left="sliderForward()"><img data-ng-src="{{image.src}}" data-ng-alt="{{image.alt}}" ng-class="show($index)"/></li>' +
